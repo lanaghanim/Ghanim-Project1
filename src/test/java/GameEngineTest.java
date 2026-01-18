@@ -1,8 +1,10 @@
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 
 public class GameEngineTest {
     private GameEngine engine;
@@ -69,7 +71,6 @@ public class GameEngineTest {
     }
 
     @Test
-
     public void testQuitWithNegativeNumber() {
         engine.setTarget(50);
         GuessResult result = engine.makeGuess(-1);
@@ -207,4 +208,5 @@ public class GameEngineTest {
         GuessResult result = engine.makeGuess(55);
         assertFalse(result.getHint().isEmpty());
     }
+
 }

@@ -1,14 +1,15 @@
 public class GameEngine {
+
     private static final int MAX_ATTEMPTS = 10;
+
+
 
     private final int min;
     private final int max;
     private int target;
     private int attempts;
     private boolean gameWon;
-
     private boolean userQuit;
-
     private boolean hintsEnabled;
 
     private boolean gameOver;
@@ -21,10 +22,12 @@ public class GameEngine {
         this.userQuit = false;
         this.hintsEnabled = true;
         this.gameOver = false;
+
         reset();
     }
 
     public GuessResult makeGuess(int guess) {
+
         // Check if user wants to quit (negative number)
         if (guess < 0) {
             userQuit = true;
@@ -70,6 +73,7 @@ public class GameEngine {
 
             result.setRemainingAttempts(remaining);
             return result;
+
         }
     }
 
@@ -77,15 +81,14 @@ public class GameEngine {
         target = Utils.randomInt(min, max);
         attempts = 0;
         gameWon = false;
+
         userQuit = false;
         gameOver = false;
-
     }
 
     public boolean isGameWon() {
         return gameWon;
     }
-
 
     public boolean hasUserQuit() {
         return userQuit;
@@ -94,6 +97,7 @@ public class GameEngine {
     public boolean isGameOver() {
         return gameOver;
     }
+
 
     public int getAttempts() {
         return attempts;
@@ -110,6 +114,7 @@ public class GameEngine {
     public int getMax() {
         return max;
     }
+
 
     public boolean isHintsEnabled() {
         return hintsEnabled;
@@ -132,6 +137,7 @@ public class GameEngine {
         }
         return "";
     }
+
 
     // For testing purposes only
     protected void setTarget(int target) {
