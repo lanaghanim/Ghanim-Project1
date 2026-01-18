@@ -13,7 +13,6 @@ public class GameUI {
         while (!engine.isGameWon()) {
             System.out.print("Guess a number between " + engine.getMin() + " and " + engine.getMax() + ": ");
             int guess = Utils.readInt(scanner);
-
             GuessResult result = engine.makeGuess(guess);
             System.out.println(result.getMessage());
         }
